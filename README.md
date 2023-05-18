@@ -5,6 +5,16 @@ Built with [LangChain](https://github.com/hwchase17/langchain/) and [FastAPI](ht
 
 The app leverages LangChain's streaming support and async API to update the page in real time for multiple users.
 
+## Vantiq Notes:
+
+This is a fork of the original ChatLangChain project.  It provides a good example of using LangChain to solve a "semantic search" problem over specific content. The following changes have been made:
+
+1. To run any of the code you will want to create a `.env` file at the root of the repo.  This file should have the following contents: `OPENAI_API_KEY=<Vantiq OpenAI key>`.  The location of this key has been sent to the Vantiq AI teams channel.
+1. `ingest.py` has been changed to ingest the `rules.md` file from our documentation.  The code assumes that this repo was cloned as peer to our docs repo.  It creates a file called `rules.pkl` that is used by the app.  This file is not checked in, but a pointer to a copy was sent to the Teams channel (generation of the file does cost money, though I'm not sure how much at this point).
+1. Some of the code has been changed to address API changes since this was originally published.
+
+We recommend the use of a virtual environment for running this code (or any python project really). There are a few ways to do this, so if you'd like some setup help please reach out to the Vantiq AI team. The instructions below rely on `make`, but you can also just run `main.py` from your IDE if you prefer.
+
 ## ✅ Running locally
 1. Install dependencies: `pip install -r requirements.txt`
 1. Run `ingest.sh` to ingest LangChain docs data into the vectorstore (only needs to be done once).
