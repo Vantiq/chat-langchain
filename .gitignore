@@ -130,10 +130,11 @@ dmypy.json
 
 # JetBrains
 .idea
+*.iml
 
 *.db
 
 .DS_Store
 
-vectorstore.pkl
+*.pkl
 langchain.readthedocs.io/
